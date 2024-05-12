@@ -3181,7 +3181,7 @@ export class PreTrainedTokenizer extends Callable {
             }
 
             tokens.forEach(token => {
-                idx = context[i].indexOf(token, lastIdx);
+                idx = context[i].indexOf(caseSensitive ? token : token.toLowerCase(), lastIdx);
 
                 // look behind and find closest match
                 if (strategy == 'closest' && idx >= 0) {
